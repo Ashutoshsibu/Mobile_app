@@ -13,12 +13,29 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "We need your location to mark attendance.",
+        "NSLocationAlwaysUsageDescription": "We need your location to mark attendance even when the app is in background."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "FOREGROUND_SERVICE"
+      ],
+      "foregroundService": {
+        "notification": {
+          "title": "GPS Attendance App",
+          "body": "Location tracking is active.",
+          "channelId": "location-tracking"
+        }
       }
     },
     "web": {
